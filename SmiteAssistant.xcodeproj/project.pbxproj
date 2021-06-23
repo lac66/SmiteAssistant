@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6907842674349F00027546 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6907822674349F00027546 /* ImageCollectionViewCell.swift */; };
+		3D6907852674349F00027546 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6907832674349F00027546 /* ImageCollectionViewCell.xib */; };
 		3DB348AF267131E7002D9C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348AE267131E7002D9C2F /* AppDelegate.swift */; };
 		3DB348B1267131E7002D9C2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348B0267131E7002D9C2F /* SceneDelegate.swift */; };
 		3DB348B3267131E7002D9C2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348B2267131E7002D9C2F /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 		3DB348C6267131EA002D9C2F /* SmiteAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348C5267131EA002D9C2F /* SmiteAssistantTests.swift */; };
 		3DB348D1267131EA002D9C2F /* SmiteAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348D0267131EA002D9C2F /* SmiteAssistantUITests.swift */; };
 		3DB348E326728E49002D9C2F /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348E226728E49002D9C2F /* SessionResponse.swift */; };
+		3DB348F32673F6D0002D9C2F /* GodSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB348F22673F6D0002D9C2F /* GodSearchViewController.swift */; };
+		3DFBC7D726743F550023CA66 /* GodImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC7D626743F550023CA66 /* GodImageHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D6907822674349F00027546 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D6907832674349F00027546 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		3DB348AB267131E7002D9C2F /* SmiteAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmiteAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB348AE267131E7002D9C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB348B0267131E7002D9C2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,8 @@
 		3DB348D0267131EA002D9C2F /* SmiteAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmiteAssistantUITests.swift; sourceTree = "<group>"; };
 		3DB348D2267131EA002D9C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB348E226728E49002D9C2F /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		3DB348F22673F6D0002D9C2F /* GodSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodSearchViewController.swift; sourceTree = "<group>"; };
+		3DFBC7D626743F550023CA66 /* GodImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodImageHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D690789267434A600027546 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D6907822674349F00027546 /* ImageCollectionViewCell.swift */,
+				3D6907832674349F00027546 /* ImageCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3DB348A2267131E7002D9C2F = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +118,11 @@
 		3DB348AD267131E7002D9C2F /* SmiteAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				3D690789267434A600027546 /* View */,
+				3DB348F72673F6D7002D9C2F /* Controllers */,
 				3DB348E126728E1D002D9C2F /* Models */,
 				3DB348AE267131E7002D9C2F /* AppDelegate.swift */,
 				3DB348B0267131E7002D9C2F /* SceneDelegate.swift */,
-				3DB348B2267131E7002D9C2F /* ViewController.swift */,
 				3DB348B4267131E7002D9C2F /* Main.storyboard */,
 				3DB348B7267131E9002D9C2F /* Assets.xcassets */,
 				3DB348B9267131E9002D9C2F /* LaunchScreen.storyboard */,
@@ -135,8 +153,18 @@
 			isa = PBXGroup;
 			children = (
 				3DB348E226728E49002D9C2F /* SessionResponse.swift */,
+				3DFBC7D626743F550023CA66 /* GodImageHolder.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3DB348F72673F6D7002D9C2F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3DB348B2267131E7002D9C2F /* ViewController.swift */,
+				3DB348F22673F6D0002D9C2F /* GodSearchViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +272,7 @@
 			files = (
 				3DB348BB267131E9002D9C2F /* LaunchScreen.storyboard in Resources */,
 				3DB348B8267131E9002D9C2F /* Assets.xcassets in Resources */,
+				3D6907852674349F00027546 /* ImageCollectionViewCell.xib in Resources */,
 				3DB348B6267131E7002D9C2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6907842674349F00027546 /* ImageCollectionViewCell.swift in Sources */,
 				3DB348B3267131E7002D9C2F /* ViewController.swift in Sources */,
 				3DB348E326728E49002D9C2F /* SessionResponse.swift in Sources */,
+				3DB348F32673F6D0002D9C2F /* GodSearchViewController.swift in Sources */,
 				3DB348AF267131E7002D9C2F /* AppDelegate.swift in Sources */,
 				3DB348B1267131E7002D9C2F /* SceneDelegate.swift in Sources */,
+				3DFBC7D726743F550023CA66 /* GodImageHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

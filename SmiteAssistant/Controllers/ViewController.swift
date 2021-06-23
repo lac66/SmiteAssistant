@@ -12,10 +12,11 @@ import CryptoKit
 let DEVID = "3963"
 let AUTHKEY = "C7788D2F0AC54C96817146849B35D0B1"
 let baseUrl = "https://api.smitegame.com/smiteapi.svc"
-var response: SessionResponse?
 var sessionId: String? = nil
 
 class ViewController: UIViewController {
+    var godResponse : Array<SessionResponse> = []
+    var godImageHolders : Array<GodImageHolder> = []
     let methods = ["createsession", "testsession", "getgods", "getitems"]
     
     @IBOutlet weak var methodPickerView: UIPickerView!
@@ -108,6 +109,8 @@ class ViewController: UIViewController {
                 
                 print(json)
                 
+                self.completeResponse(response: json)
+                
                 DispatchQueue.main.async {
                     var responseString = "["
                     for god in json {
@@ -120,6 +123,23 @@ class ViewController: UIViewController {
         })
         
         task.resume()
+    }
+    
+    private func completeResponse(response: Array<SessionResponse>) {
+        self.godResponse = response
+        
+        if self.godResponse.count != 0 {
+            print("got god images")
+            var i = 0
+            for god in self.godResponse {
+                let imageHolder = GodImageHolder.init(id: i, ability1URL: god.godAbility1_URL!, ability2URL: god.godAbility2_URL!, ability3URL: god.godAbility3_URL!, ability4URL: god.godAbility4_URL!, ability5URL: god.godAbility5_URL!, godCardURL: god.godCard_URL!, godIconURL: god.godIcon_URL!)
+                
+                imageHolder.getImages()
+                self.godImageHolders.append(imageHolder)
+                i += 1
+            }
+        }
+        
     }
 
     private func createSignature(from methodName: String) -> String {
@@ -136,6 +156,19 @@ class ViewController: UIViewController {
         format.dateFormat = "yyyyMMddHHmmss"
         format.timeZone = TimeZone(identifier: "UTC")
         return format.string(from: date)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFromBaseToGod" {
+            let destinationVC = segue.destination as! GodSearchViewController
+            
+            destinationVC.godList = self.godResponse
+            destinationVC.godImageHolders = self.godImageHolders
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return self.godImageHolders.hasAllImages()
     }
 
 }
