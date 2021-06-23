@@ -25,9 +25,6 @@ class GodSearchViewController: UIViewController {
             print("god god Images \(godImageHolders.hasAllImages())")
         }
         
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 30, height: 30)
-        
         godsCollectionView.register(ImageCollectionViewCell.nib(), forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
 
         godsCollectionView.delegate = self
@@ -66,7 +63,7 @@ extension GodSearchViewController: UICollectionViewDataSource {
 
 extension GodSearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: 30)
+        return CGSize(width: 118, height: 118)
     }
 }
 
